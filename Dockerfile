@@ -60,6 +60,8 @@ USER newuser
 RUN chown -R newuser:newuser /home/newuser
 COPY before_tests.sh /home/newuser
 USER root
+RUN mkdir /tmp/.X11-unix
+RUN chmod 1777 /tmp/.X11-unix
 RUN chmod +x /home/newuser/before_tests.sh
 USER newuser
 
